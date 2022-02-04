@@ -1,0 +1,35 @@
+//T.sudharjini awdckkd ASSIGNMENT-1 //
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+ int  n,i,vowels = 0, consonant = 0;
+  
+ char ch,str[100];
+ printf("Enter a string\n");
+ gets(str);
+  n=strlen(str);
+ 
+    for (i = 0; i < n; i++) {
+           
+        ch = str[i];
+  
+        if ( (ch >= 'a' && ch <= 'z') || 
+              (ch >= 'A' && ch <= 'Z') )
+              {
+                  ch =tolower(ch);
+  
+            if (ch == 'a' || ch == 'e' || ch == 'i' ||
+                ch == 'o' || ch == 'u')
+                vowels++;
+            else
+                consonant++;
+               }
+    }
+    printf("Vowels: %d\n" ,vowels);
+    printf("Consonants: %d\n", consonant );
+ 
+return 0;
+}
