@@ -1,0 +1,80 @@
+//T.sudharjini awdckkd ASSIGNMENT-1//
+
+#include<stdio.h>
+struct std
+{ 
+    int sno,s1,s2,s3;
+
+    char sname[40], group[10];
+}s[100];
+
+int main()
+{
+    int n,i;
+    float tot,avg;
+printf("Enter no.of students  :");
+scanf("%d",&n);
+printf("Enter student details  \n");
+for(i=1;i<=n;i++)
+{
+    printf("Enter student%d number :",i);
+    scanf("%d",&s[i].sno);
+    printf("\nEnter student name :");
+    scanf("%s",s[i].sname);
+    printf("\nEnter group name  :");
+    scanf("%s",s[i].group);
+    printf("\nenter marks for 3 subjects");
+    scanf("%d%d%d",&s[i].s1,&s[i].s2,&s[i].s3);    
+    
+}
+
+printf("Students result\n");
+
+for(i=1;i<=n;i++)
+{
+    printf("Student%d number  :%d\n",i,s[i].sno);
+    printf("Student name  :%s\n",s[i].sname);
+    printf("Student group  :%s\n",s[i].group);
+    printf("Subject1 marks  :%d\n",s[i].s1);
+    printf("subject2 marks  :%d\n",s[i].s2);
+    printf("Subject3 marks  :%d\n",s[i].s3);
+
+   tot=s[i].s1+s[i].s2+s[i].s3;
+    avg=tot/3;
+    
+    printf("Total marks  :%2.f\n",tot);
+    printf("Average marks  :%2.f\n",avg);
+
+    
+    if(avg>=90) 
+      printf("A grade\n");
+     else if(avg<90 && avg>=70)
+     printf("B grade\n");
+     else if(avg<70 && avg>=60)
+     printf("C grade\n");
+     else if(avg<60 && avg>=50)
+     printf("D grade\n");
+     else
+     printf("Fail\n");
+     
+}
+return 0;
+}     
+     
+     
+     
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
