@@ -1,0 +1,26 @@
+//T.sudharjini awdckkd assignment 2//
+#include<stdio.h>  
+  
+void display(int);  
+  
+int main()  
+{  
+    int n=10;  
+  
+    printf("\nUsing Recursion...Numbers from 10 To 1 are:\n");  
+    display(n);    
+  
+    return 0;  
+}  
+  
+void display(int num)  
+{  
+    if(num)  
+    {
+        printf("\n%d\n", num);  
+        display(num-1);  
+    }
+    else  
+        return;  
+  
+}
