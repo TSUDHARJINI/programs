@@ -1,0 +1,20 @@
+/*T.sudharjini awdckkd assignment-1*/
+#include <stdio.h>
+int main()
+{
+    int a;
+    int *p;
+    printf("enter the value of a:");
+    scanf("%d",&a);
+    p=&a;
+    printf("the initial value of a is=%d\n:",*p);
+    *p=*p+7;
+    printf("the value after adding 5 is=%d\n",*p);
+    *p=*p-4;
+    printf("the value after subtracting 2 is=%d\n",*p);
+    *p=++(*p);
+    printf("the value after increment is=%d\n",*p);
+    *p=--(*p);
+    printf("the value after decrement is=%d\n",*p);
+    return 0;
+}
