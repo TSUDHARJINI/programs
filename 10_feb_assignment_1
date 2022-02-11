@@ -1,0 +1,34 @@
+//T.sudharjini awdckkd ASSIGNMENT-1
+
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+
+int main()
+{
+
+    char data[500];
+
+    FILE * fPtr;
+    
+	fPtr = fopen("D:\one.txt", "w");
+
+    if(fPtr == NULL)
+    {
+
+        printf("Unable to create file.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    printf("Enter contents to store in file : \n");
+    fgets(data, 500, stdin);
+    
+	fputs(data, fPtr);
+    
+	fclose(fPtr);
+
+    printf("File is created and saved  :) \n");
+
+
+    return 0;
+}
