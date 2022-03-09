@@ -1,0 +1,21 @@
+update student set total=m+p+cs;
+update student set avg=total/3;
+
+
+
+SQL> select * from student;
+
+       SNO SNAME               M          P         CS      TOTAL        AVG
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+         1 rani               68         79         59        206      68.67
+         2 ravi               67         88         77        232      77.33
+         3 ramya              67         66         99        232      77.33
+         4 amruth             56         78         90        224      74.67
+         5 raju               88         77         55        220      73.33
+         6 raghu              78         45         35        158      52.67
+         7 padma               7         56         78        141         47
+         8 ramu               66         87         47        200      66.67
+         9 srinu              78         57         39        174         58
+        10 lakshmi            66         90         79        235      78.33
+
+10 rows selected.
