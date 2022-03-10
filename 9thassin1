@@ -1,0 +1,28 @@
+create table university12(regid number(4) primary key,studentname varchar2(20),gender char(1),year number(4),collegename varchar2(30));
+
+ insert into university12 values(&id,'&stdname','&gender',&year,'&collegename');
+
+select * from university12 ;
+
+
+
+
+
+select * from university12 ;
+
+     REGID STUDENTNAME          G       YEAR COLLEGENAME
+---------- -------------------- - ---------- ------------------------------
+         1 sudha                f       2000 vsl
+         2 laxman               m       2001 vsm
+         3 anusha               f       2002 vsl
+         4 priya                f       2003 vsl
+         5 ganesh               m       2004 vsm
+
+ desc university12 ;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ REGID                                     NOT NULL NUMBER(4)
+ STUDENTNAME                                        VARCHAR2(20)
+ GENDER                                             CHAR(1)
+ YEAR                                               NUMBER(4)
+ COLLEGENAME                                        VARCHAR2(30)
