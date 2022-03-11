@@ -1,0 +1,29 @@
+SQL> connect system/abbu
+Connected.
+SQL> create table employee(eno number(3), ename varchar2(20),design varchar2(15),salary number(6));
+
+Table created.
+
+SQL> desc employee
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ENO                                                NUMBER(3)
+ ENAME                                              VARCHAR2(20)
+ DESIGN                                             VARCHAR2(15)
+ SALARY                                             NUMBER(6)
+ 
+SQL> grant all on employee to ABC;
+
+Grant succeeded.
+
+SQL> connect abc/abbu
+Connected.
+SQL> desc system.employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ENO                                                NUMBER(3)
+ ENAME                                              VARCHAR2(20)
+ DESIGN                                             VARCHAR2(15)
+ SALARY                                             NUMBER(6)
+
+
