@@ -1,0 +1,57 @@
+SQL> connect abc/sudha
+Connected.
+
+SQL> insert into system.employee values(&no,'&name','&desig',&sal);
+
+SQL> select * from system.employee;
+
+       ENO ENAME                          DESIGN                   SALARY
+---------- ------------------------------ -------------------- ----------
+         1 raamu                          manager                   42000
+         2 amruth                         engineer                  31000
+         3 chandana                       analyst                   39000
+         4 kavya                          developer                 30000
+         5 kumar                          team leader               40000
+       
+       
+SQL> commit;
+
+Commit complete.
+
+
+SQL> savepoint xxx;
+
+Savepoint created.
+
+SQL>  insert into system.employee values(&no,'&name','&desig',&sal);
+
+SQL> select * from system.employee;
+
+       ENO ENAME                          DESIGN                   SALARY
+---------- ------------------------------ -------------------- ----------
+         1 raamu                        manager                   42000
+         2 laxman                         engineer                  31000
+         3 chandana                       analyst                   39000
+         4 kavya                          developer                 30000
+         5 vijay                          team leader               40000
+         6 jai                            manager                   40000
+         7 prabha                         manager                   25000
+
+SQL> savepoint yyy;
+
+Savepoint created.
+
+SQL> rollback to xxx;
+
+Rollback complete.
+
+SQL> select * from system.employee;
+
+       ENO ENAME                          DESIGN                   SALARY
+---------- ------------------------------ -------------------- ----------
+         1 raamu                          manager                   42000
+         2 laxman                         engineer                  31000
+         3 chandana                       analyst                   39000
+         4 kavya                          developer                 30000
+         5 vijay                          team leader               40000
+       
