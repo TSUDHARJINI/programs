@@ -21,7 +21,7 @@ Commit complete.
 
 SQL> savepoint xxx;
 
-Savepoint created.
+Savepoint created..
 
 SQL>  insert into system.employee values(&no,'&name','&desig',&sal);
 
