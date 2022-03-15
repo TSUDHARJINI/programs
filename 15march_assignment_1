@@ -1,0 +1,12 @@
+ create table registration(redno number(4),candname varchar2(30),gender varchar2(7),qualification varchar2(20),age number(2) check(age between 20 and 30));
+
+Table created.
+
+SQL> desc registration;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ REDNO                                              NUMBER(4)
+ CANDNAME                                           VARCHAR2(30)
+ GENDER                                             VARCHAR2(7)
+ QUALIFICATION                                      VARCHAR2(20)
+ AGE                                                NUMBER(2)
