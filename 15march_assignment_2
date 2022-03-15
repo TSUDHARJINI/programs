@@ -1,0 +1,42 @@
+insert into registration values(&redno,'&name','&gender','&qualification',&age);
+
+ select *from registration;
+
+     REDNO CANDNAME                       GENDER  QUALIFICATION
+---------- ------------------------------ ------- --------------------
+       AGE
+----------
+         1 laxman                         m       b.tech
+        27
+
+         2 kiran                          m       b.tech
+        27
+
+         3 raamu                          m       b.sc
+        28
+
+
+     REDNO CANDNAME                       GENDER  QUALIFICATION
+---------- ------------------------------ ------- --------------------
+       AGE
+----------
+         4 sai                            f       bca
+        26
+
+         5 swathi                         f       m.tech
+        30
+        
+  select *from registration where gender='m';
+
+     REDNO CANDNAME                       GENDER  QUALIFICATION
+---------- ------------------------------ ------- --------------------
+       AGE
+----------
+         1 laxman                         m       b.tech
+        27
+
+         2 kiran                          m       b.tech
+        27
+
+         3 raamu                          m       b.sc
+        28
