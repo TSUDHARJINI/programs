@@ -1,0 +1,67 @@
+ create table apsrtc(service_no varchar2(10) primary key,service_type varchar2(20),boarding varchar2(15),upto varchar2(15),kms number(5),ticket_price number(5));
+
+Table created.
+
+SQL> desc apsrtc;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SERVICE_NO                                NOT NULL VARCHAR2(10)
+ SERVICE_TYPE                                       VARCHAR2(20)
+ BOARDING                                           VARCHAR2(15)
+ UPTO                                               VARCHAR2(15)
+ KMS                                                NUMBER(5)
+ TICKET_PRICE                                       NUMBER(5)
+
+ select *from apsrtc;
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+ap1        exp                  kkd             vzg                    400
+         400
+
+ap2        lux                  png             hyd                    500
+         500
+
+ap3        krp                  vzg             kkd                    400
+         400
+
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+ap4        ndk                  kkd             hyd                    600
+         600
+
+ap5        lux                  krp             hyd                    500
+         500
+
+ap6        lux                  hyd             krp                    600
+         600
+
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+ap7        exp                  hyd             png                    700
+         700
+
+ap8        exp                  hyd             vzg                    600
+         600
+
+ap9        lux                  ndk             vzg                    500
+         500
+
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+ap10       exp                  vzg             krp                    500
+         500
+
+
+10 rows selected.
