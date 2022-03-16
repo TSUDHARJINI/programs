@@ -1,0 +1,63 @@
+SQL> select *from apsrtc;
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS TICKET_PRICE
+---------- -------------------- --------------- --------------- ---------- ------------
+ap1        exp                  kkd             vzg                    400          400
+ap2        lux                  png             hyd                    500          500
+ap3        krp                  vzg             kkd                    400          400
+ap4        ndk                  kkd             hyd                    600          100
+ap5        lux                  krp             hyd                    500          500
+ap6        lux                  hyd             krp                    600          100
+ap7        exp                  hyd             png                    700          100
+ap8        exp                  hyd             vzg                    600          100
+ap9        lux                  ndk             vzg                    500          500
+ap10       exp                  vzg             krp                    500          500
+
+10 rows selected.
+
+SQL> update apsrtc set ticket_price=ticket_price+100 where kms > 500;
+
+4 rows updated.
+
+SQL> select *from apsrtc;
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS TICKET_PRICE
+---------- -------------------- --------------- --------------- ---------- ------------
+ap1        exp                  kkd             vzg                    400          400
+ap2        lux                  png             hyd                    500          500
+ap3        krp                  vzg             kkd                    400          400
+ap4        ndk                  kkd             hyd                    600          200
+ap5        lux                  krp             hyd                    500          500
+ap6        lux                  hyd             krp                    600          200
+ap7        exp                  hyd             png                    700          200
+ap8        exp                  hyd             vzg                    600          200
+ap9        lux                  ndk             vzg                    500          500
+ap10       exp                  vzg             krp                    500          500
+
+10 rows selected.
+
+SQL> update apsrtc set ticket_price=ticket_price-50 where kms < 500;
+
+2 rows updated.
+
+SQL> select *from apsrtc;
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS TICKET_PRICE
+---------- -------------------- --------------- --------------- ---------- ------------
+ap1        exp                  kkd             vzg                    400          350
+ap2        lux                  png             hyd                    500          500
+ap3        krp                  vzg             kkd                    400          350
+ap4        ndk                  kkd             hyd                    600          200
+ap5        lux                  krp             hyd                    500          500
+ap6        lux                  hyd             krp                    600          200
+ap7        exp                  hyd             png                    700          200
+ap8        exp                  hyd             vzg                    600          200
+ap9        lux                  ndk             vzg                    500          500
+ap10       exp                  vzg             krp                    500          500
+
+10 rows selected.
+SQL> select * from apsrtc where boarding='vzg' and upto='kkd';
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS TICKET_PRICE
+---------- -------------------- --------------- --------------- ---------- ------------
+ap3        krp                  vzg             kkd                    400          350
