@@ -17,7 +17,7 @@ SQL> create sequence adckkd
     cycle;
 
 Sequence created.
-sql> insert into restaurant (billid,custname,phno,amount)values(adckkd.nextval,'&custname',&phno,&amount);
+SQL> insert into restaurant (billid,custname,phno,amount)values(adckkd.nextval,'&custname',&phno,&amount);
 
 SQL> select *from restaurant;
 
