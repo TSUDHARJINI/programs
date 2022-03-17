@@ -1,0 +1,24 @@
+SQL>  select *from restaurant where custname like 'j%';
+
+    BILLID CUSTNAME                   PHNO     AMOUNT
+---------- -------------------- ---------- ----------
+    100001 jyothi               6789543267        900
+    100002 joshna                678954325        789
+    100003 jaggu                9876546789        890
+
+SQL> select *from restaurant order by custname desc;
+
+    BILLID CUSTNAME                   PHNO     AMOUNT
+---------- -------------------- ---------- ----------
+    100005 vj                    678956789        456
+    100007 suraj                6789543678        987
+    100009 sudharjini           7896546789        348
+    100004 sudha                6789456789        786
+    100008 raamu                7896543265        784
+    100010 priya                7654398765        678
+    100006 laxman               7896543678        569
+    100001 jyothi               6789543267        900
+    100002 joshna                678954325        789
+    100003 jaggu                9876546789        890
+
+10 rows selected.
