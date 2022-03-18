@@ -1,0 +1,83 @@
+SQL> create table stud(regno number(4) primary key,sname varchar2(30),grp varchar2(10),email_id varchar2(30),phno number(10));
+
+Table created.
+
+SQL> desc stud;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ REGNO                                     NOT NULL NUMBER(4)
+ SNAME                                              VARCHAR2(30)
+ GRP                                                VARCHAR2(10)
+ EMAIL_ID                                           VARCHAR2(30)
+ PHNO                                               NUMBER(10)
+
+SQL>  create table exam(regno number(4) references stud(regno),s1 number(6),s2 number(6),s3 number(6),total number(5),avg number(7,4));
+
+Table created.
+
+SQL> desc exam;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ REGNO                                              NUMBER(4)
+ S1                                                 NUMBER(6)
+ S2                                                 NUMBER(6)
+ S3                                                 NUMBER(6)
+ TOTAL                                              NUMBER(5)
+ AVG                                                NUMBER(7,4)
+
+SQL> insert into stud values(&regno,'&name','&group','&email',&phno);
+SQL>  select * from stud;
+
+     REGNO SNAME                          GRP        EMAIL_ID                             PHNO
+---------- ------------------------------ ---------- ------------------------------ ----------
+         1 sudha                          mpcs       sudhasri@gmail.com             7896543987
+         2 laxman                         mpcs       laxmandep@gmail.com            9876567887
+         3 ram                            mpcs       ramssd@gmail.com                789678987
+         4 sagar                          mscs       sagarsag@gmail.com              789234567
+         5 anusha                         mecs       anusha                         7896543678
+         6 priya                          mpc        priyaasd@gmail.com              678956789
+         7 rani                           b.com      raanifgh@gmail.com              987678549
+         8 vj                             bba        vjvj@gmail.com                  678956783
+         9 deepika                        bba        deepu@gmail.com                 678998764
+        10 prawaj                         mscs       prawajparavi@gmail.com          897656789
+
+10 rows selected.
+SQL> insert into exam(regno,s1,s2,s3)values(&regno ,&s1,&s2,&s3);
+SQL>  select * from exam;
+
+     REGNO         S1         S2         S3      TOTAL        AVG
+---------- ---------- ---------- ---------- ---------- ----------
+         1         45         56         78
+         2         78         98         67
+         3         32         12         34
+         4         67         98         54
+         5         56         98         12
+         6         67         49         83
+         7         67         92         28
+         8         56         98         76
+         9         56         87         69
+        10         45         96         76
+
+10 rows selected.
+SQL> update exam set total=s1+s2+s3 ,avg=(s1+s2+s3)/3;
+
+10 rows updated.
+SQL> select * from exam;
+
+     REGNO         S1         S2         S3      TOTAL        AVG
+---------- ---------- ---------- ---------- ---------- ----------
+         1         45         56         78        179    59.6667
+         2         78         98         67        243         81
+         3         32         12         34         78         26
+         4         67         98         54        219         73
+         5         56         98         12        166    55.3333
+         6         67         49         83        199    66.3333
+         7         67         92         28        187    62.3333
+         8         56         98         76        230    76.6667
+         9         56         87         69        212    70.6667
+        10         45         96         76        217    72.3333
+
+10 rows selected.
+
+
+
