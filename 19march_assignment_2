@@ -1,0 +1,128 @@
+SQL> create table stud45(sno number(5),sname varchar2(15),m number(6),s number(4),cs number(4),total number(6),avg number(6,2));
+
+Table created.
+
+SQL> desc stud45;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SNO                                                                                                                        NUMBER(5)
+ SNAME                                                                                                                      VARCHAR2(15)
+ M                                                                                                                          NUMBER(6)
+ S                                                                                                                          NUMBER(4)
+ CS                                                                                                                         NUMBER(4)
+ TOTAL                                                                                                                      NUMBER(6)
+ AVG                                                                                                                        NUMBER(6,2)
+ 
+ 
+ SQL> create table sdetails(sno number(5),sname varchar2(15),m number(6),s number(4),cs number(4),total number(6),avg number(6,2));
+
+Table created.
+
+SQL> desc sdetails;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SNO                                                                                                                        NUMBER(5)
+ SNAME                                                                                                                      VARCHAR2(15)
+ M                                                                                                                          NUMBER(6)
+ S                                                                                                                          NUMBER(4)
+ CS                                                                                                                         NUMBER(4)
+ TOTAL                                                                                                                      NUMBER(6)
+ AVG                                                                                                                        NUMBER(6,2)
+ 
+ 
+ SQL> insert into stud45(sno,sname,m,s,cs) values(&sno,'&sname',&m,&s,&cs);
+ 
+ SQL>  select * from stud45;
+
+       SNO SNAME                    M          S         CS      TOTAL        AVG
+---------- --------------- ---------- ---------- ---------- ---------- ----------
+         1 prasanna                76         67         89
+         3 sudha                   89         90         90
+         5 ram                     78         89         45
+         7 prajwal                 98         98         78
+         9 anusha                  56         34         56
+        11 swathi                  56         78         98
+
+6 rows selected.
+
+SQL>  update stud45 set total=m+s+cs,avg=(m+s+cs)/3;
+
+6 rows updated.
+
+SQL> select * from stud45;
+
+       SNO SNAME                    M          S         CS      TOTAL        AVG
+---------- --------------- ---------- ---------- ---------- ---------- ----------
+         1 prasanna                76         67         89        232      77.33
+         3 sudha                   89         90         90        269      89.67
+         5 ram                     78         89         45        212      70.67
+         7 prajwal                 98         98         78        274      91.33
+         9 anusha                  56         34         56        146      48.67
+        11 swathi                  56         78         98        232      77.33
+
+6 rows selected.
+SQL> insert into sdetails(sno,sname,m,s,cs) values(&sno,'&sname',&m,&s,&cs);
+SQL>  select * from sdetails;
+
+       SNO SNAME                    M          S         CS      TOTAL        AVG
+---------- --------------- ---------- ---------- ---------- ---------- ----------
+        12 laxman                  56         56         56
+        13 devi                    56         89         78
+        14 ramani                  34         12         34
+        16 rani                    12         12         12
+        
+ SQL>  update sdetails set total=m+s+cs ,avg=(m+s+cs)/3;
+
+4 rows updated.
+
+SQL>  select * from sdetails;
+
+       SNO SNAME                    M          S         CS      TOTAL        AVG
+---------- --------------- ---------- ---------- ---------- ---------- ----------
+        12 laxman                  56         56         56        168         56
+        13 devi                    56         89         78        223      74.33
+        14 ramani                  34         12         34         80      26.67
+        16 rani                    12         12         12         36         12
+        
+        
+  SQL> select * from stud45 union select * from sdetails;
+
+       SNO SNAME                    M          S         CS      TOTAL        AVG
+---------- --------------- ---------- ---------- ---------- ---------- ----------
+         1 prasanna                76         67         89        232      77.33
+         3 sudha                   89         90         90        269      89.67
+         5 ram                     78         89         45        212      70.67
+         7 prajwal                 98         98         78        274      91.33
+         9 anusha                  56         34         56        146      48.67
+        11 swathi                  56         78         98        232      77.33
+        12 laxman                  56         56         56        168         56
+        13 devi                    56         89         78        223      74.33
+        14 ramani                  34         12         34         80      26.67
+        16 rani                    12         12         12         36         12
+
+10 rows selected.
+
+
+SQL>  select * from stud45 intersect select * from sdetails;
+
+no rows selected
+
+SQL> select * from stud45 minus select * from sdetails;
+
+       SNO SNAME                    M          S         CS      TOTAL        AVG
+---------- --------------- ---------- ---------- ---------- ---------- ----------
+         1 prasanna                76         67         89        232      77.33
+         3 sudha                   89         90         90        269      89.67
+         5 ram                     78         89         45        212      70.67
+         7 prajwal                 98         98         78        274      91.33
+         9 anusha                  56         34         56        146      48.67
+        11 swathi                  56         78         98        232      77.33
+
+6 rows selected.
+
+       
+        
+        
+
+
+SQL> insert into sdetails(sno,sname,m,s,cs) values(&sno,'&sname',&m,&s,&cs);
