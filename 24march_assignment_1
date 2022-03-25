@@ -1,0 +1,45 @@
+SQL> create table employee12(eno number(6),ename varchar2(23),design varchar2(15),dob date,doj date,salary number(8));
+
+Table created.
+SQL> desc employee12;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ ENO                                                                                                                        NUMBER(6)
+ ENAME                                                                                                                      VARCHAR2(23)
+ DESIGN                                                                                                                     VARCHAR2(15)
+ DOB                                                                                                                        DATE
+ DOJ                                                                                                                        DATE
+ SALARY                                                                                                                     NUMBER(8)
+
+
+
+SQL>  insert into employee12 values(&no,'&name','&desig','&dob','&doj',&sal);
+SQL>  select * from employee12;
+
+       ENO ENAME                   DESIGN          DOB       DOJ           SALARY
+---------- ----------------------- --------------- --------- --------- ----------
+         1 sudha                   developer       12-AUG-96 12-SEP-17       9000
+         2 laxman                  manager         13-AUG-96 17-SEP-17       8000
+         3 anusha                  accountant      14-SEP-95 15-JAN-09       7000
+         4 prajwal                 hardware        15-FEB-92 13-MAY-19       9000
+         5 priya                   team leader     16-DEC-87 14-OCT-08       9000
+
+SQL> select eno,ename,trunc((sysdate-to_date(doj))/365.25,0) as experience_in_years from employee12;
+
+       ENO ENAME                   EXPERIENCE_IN_YEARS
+---------- ----------------------- -------------------
+         1 sudha                                     4
+         2 laxman                                    4
+         3 anusha                                   13
+         4 prajwal                                   2
+         5 priya                                    13
+
+SQL> select eno,ename,trunc((sysdate-to_date(dob))/365.25,0) as age_in_years from employee12;
+
+       ENO ENAME                   AGE_IN_YEARS
+---------- ----------------------- ------------
+         1 sudha                             25
+         2 laxman                            25
+         3 anusha                            26
+         4 prajwal                           30
+         5 priya                             34
