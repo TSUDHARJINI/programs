@@ -1,0 +1,43 @@
+SQL> create trigger e_sal
+  2      before update on employee12
+  3      for each row
+  4      when(new.eno>100)
+  5      declare
+  6      sal int;
+  7      begin
+  8      sal:=:new.salary-:old.salary;
+  9      dbms_output.put_line('old salary : '||:old.salary);
+ 10      dbms_output.put_line('new salary : '||:new.salary);
+ 11      dbms_output.put_line('increment  : '||sal);
+ 12      end;
+ 13  /
+
+Trigger created.
+SQL>  declare
+  2      increm int;
+  3      begin
+  4      update employee12 set salary=salary+7500;
+  5      if sql%notfound then
+  6      dbms_output.put_line('no salary updated');
+  7      elsif sql%found then
+  8      increm:=sql%rowcount;
+  9      dbms_output.put_line(increm ||' employee salaries updated');
+ 10      end if;
+ 11      end;
+ 12      /
+
+PL/SQL procedure successfully completed.
+SQL> set serveroutput on;
+SQL> /
+5 employee salaries updated
+
+PL/SQL procedure successfully completed.
+SQL>  select * from employee12;
+
+       ENO ENAME                   DESIGN          DOB       DOJ           SALARY
+---------- ----------------------- --------------- --------- --------- ----------
+         1 sudha                   developer       12-AUG-96 12-SEP-17      24000
+         2 laxman                  manager         13-AUG-96 17-SEP-17      23000
+         3 anusha                  accountant      14-SEP-95 15-JAN-09      22000
+         4 prajwal                 hardware        15-FEB-92 13-MAY-19      24000
+         5 priya                   team leader     16-DEC-87 14-OCT-08      24000
