@@ -1,0 +1,29 @@
+SQL> declare
+  2  a int;
+  3  b int;
+  4  c int;
+  5  function big(x in int,y in int)  return int is z int;
+  6  begin
+  7    if( x>y) then
+  8       z:=x;
+  9    else
+ 10       z:=y;
+ 11    end if;
+ 12  return z;
+ 13  end;
+ 14  begin
+ 15    a:=&a;
+ 16    b:=&b;
+ 17    c:=big(a,b);
+ 18    dbms_output.put_line('biggest of '||a||' and '||b||' is  '||c);
+ 19  end;
+ 20  /
+Enter value for a: 10
+old  15:   a:=&a;
+new  15:   a:=10;
+Enter value for b: 9
+old  16:   b:=&b;
+new  16:   b:=9;
+biggest of 10 and 9 is  10
+
+PL/SQL procedure successfully completed.
