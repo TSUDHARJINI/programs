@@ -1,0 +1,38 @@
+SQL> declare
+  2  a int;
+  3  b int;
+  4  c int;
+  5  procedure big(x in int,y in int,z out int) is
+  6  begin
+  7    if( x>y) then
+  8       z:=x;
+  9    else
+ 10       z:=y;
+ 11    end if;
+ 12  end;
+ 13  begin
+ 14    a:=&a;
+ 15    b:=&b;
+ 16      big(a,b,c);
+ 17    dbms_output.put_line('biggest of '||a||' and '||b||' is  '||c);
+ 18  end;
+ 19  /
+Enter value for a: 12
+old  14:   a:=&a;
+new  14:   a:=12;
+Enter value for b: 13
+old  15:   b:=&b;
+new  15:   b:=13;
+
+PL/SQL procedure successfully completed.
+SQL> set serveroutput on;
+SQL> /
+Enter value for a: 12
+old  14:   a:=&a;
+new  14:   a:=12;
+Enter value for b: 13
+old  15:   b:=&b;
+new  15:   b:=13;
+biggest of 12 and 13 is  13
+
+PL/SQL procedure successfully completed.
