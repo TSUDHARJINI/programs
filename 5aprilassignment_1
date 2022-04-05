@@ -1,0 +1,19 @@
+public class sud
+ {
+public static void main(String args[])
+ {
+System.out.println("Name:THUMMALAPALLI SUDHARJINI");
+System.out.println("Address: Kakinada");
+System.out.println("Qualification: BCA");
+System.out.println("Working exp: 2yrs");
+System.out.println("Contact Number: 009876");
+}
+}
+output:C:\Users\admin\Desktop>javac sud.java
+
+C:\Users\admin\Desktop>java sud
+Name:THUMMALAPALLI SUDHARJINI
+Address: Kakinada
+Qualification: BCA
+Working exp: 2yrs
+Contact Number: 009876
