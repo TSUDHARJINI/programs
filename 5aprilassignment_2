@@ -1,0 +1,25 @@
+public class Week
+ {
+public static void main(String args[])
+ {
+System.out.println("WEEK DAY NAMES");
+System.out.println("1.Monday");
+System.out.println("2.Tuesday");
+System.out.println("3.Wednesday");
+System.out.println("4.Thursday");
+System.out.println("5.Friday");
+System.out.println("6.Saturday");
+System.out.println("7.Sunday");
+}
+}
+output:C:\Users\admin\Documents>javac week.java
+
+C:\Users\admin\Documents>java week
+WEEK DAY NAMES
+1.Monday
+2.Tuesday
+3.Wednesday
+4.Thursday
+5.Friday
+6.Saturday
+7.Sunday
