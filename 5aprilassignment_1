@@ -9,6 +9,7 @@ System.out.println("Working exp: 2yrs");
 System.out.println("Contact Number: 009876");
 }
 }
+
 output:C:\Users\admin\Desktop>javac sud.java
 
 C:\Users\admin\Desktop>java sud
