@@ -1,0 +1,21 @@
+import java.util.*;
+public class ReadEmploye
+{
+public static void main(String[] args)
+    {
+int no; 
+String sname;
+double sphno; 
+Scanner console = new Scanner(System.in);  
+System.out.print("Enter sname: ");
+sname = console.nextLine();     
+System.out.print("Enter no : ");
+no = console.nextDouble();
+
+System.out.print("Enter sphno: ");
+sphno = console.nextInt();
+System.out.println( "sName: " + sname);  
+System.out.println( "no:" + no );
+System.out.println( "sphno: " + sphno);
+}
+}
