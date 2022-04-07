@@ -1,0 +1,21 @@
+import java.util.*;
+class Operations
+{
+public static void main(String sudha[])
+{
+Scanner sc=new Scanner(System.in);
+int m,n,sum,sub,mul,div;
+System.out.print("Enter m value:");
+m=sc.nextInt();
+System.out.print("Enter n value:");
+n=sc.nextInt();
+sum=m+n;
+sub=m-n;
+mul=m*n;
+div=m/n;
+System.out.println("sum=" + sum );  
+System.out.println("sub=" + sub );
+System.out.println("mul=" + mul );
+System.out.println("div=" + div );
+}
+}
