@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Main
+{
+
+    public static void main(String[] args)
+    {
+
+        String x;
+        int cost;
+        double time,rate,si,emi;
+        Scanner sn=new Scanner(System.in);
+      System.out.println("Enter the name of the car");
+       
+      s=sn.nextLine();
+        System.out.println("Enter the cost of the car,Time to repay the EMI, Rate of Interest");
+        cost=sn.nextInt();
+        time=sn.nextDouble();
+        rate=sn.nextDouble();
+        si=(cost*time*rate)/100;
+        emi=(cost+si)/(time*12);
+        System.out.printf("EMI of the car is %.2f ",emi);
+    }
+}   
