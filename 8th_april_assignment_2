@@ -1,0 +1,27 @@
+import java.util.*;
+class str_or_num
+{
+
+    public static void main(String[] args)
+    {
+
+        String string ;
+        System.out.println("Enter a string or a numeric");
+        Scanner sn=new Scanner(System.in);
+        string=sn.nextLine();
+        boolean numeric = true;
+
+        try {
+            Double num = Double.parseDouble(string);
+            }
+         catch (NumberFormatException e)
+        {
+            numeric = false;
+        }
+
+        if(numeric)
+            System.out.println(string + " is a number");
+        else
+            System.out.println(string + " is not a number");
+    }
+}
