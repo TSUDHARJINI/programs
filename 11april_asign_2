@@ -1,0 +1,13 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int m,n;
+	    
+		System.out.println("Enter any two values");
+		Scanner sn =new Scanner(System.in);
+		m=sn.nextInt();
+		n=sn.nextInt();
+		System.out.println("Minimum number is = "+Math.min(m,n));
+	}
+}
