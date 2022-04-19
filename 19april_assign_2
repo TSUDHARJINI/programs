@@ -1,0 +1,62 @@
+import java.util.*;
+public class Main
+{
+    static int bal=20000;
+    static void credit(int amount)
+    {
+        bal=bal+amount;
+        System.out.println("Transaction process has successfully done... ");
+    
+    }
+    static void debit(int amount)
+    {
+        if(amount>bal)
+        
+            System.out.println("Insufficient balance....Try again");
+        else
+        {
+            System.out.println("Transaction process has successfully done... ");
+        
+            bal=bal-amount;
+             }
+    
+    }
+    static void checkbal()
+    {
+    System.out.println("Account balance : "+bal);
+    }
+
+
+	public static void main(String[] args) {
+	    int amount,op,upi;
+	    Scanner sn=new Scanner(System.in);
+	    System.out.println("1.Googepay\n2.Phonepay\n3.Amazonpay\n4.paytm\n");
+	    System.out.println("1.Credit\n2.Debit\n3.Checkbalance\n");
+	    do
+	    {
+	        System.out.println("Enter ur choice for UPI :");
+	    upi=sn.nextInt();
+	    System.out.println("Enter ur option :");
+	    op=sn.nextInt();
+	    switch(op)
+	    {
+	        case 1:
+	              System.out.println("Enter amount to credit:");
+	              amount=sn.nextInt();
+	              credit(amount);
+	              break;
+	        case 2:
+	              System.out.println("Enter amount to withdraw");
+	              amount=sn.nextInt();
+	              debit(amount);
+	              break;
+	        case 3:
+	              checkbal();
+	              break;
+	        default :
+	              System.out.println("U entered wrong entry");
+	    }
+     }while(op<4);
+	}	    
+	    
+}		
