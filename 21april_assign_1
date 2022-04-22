@@ -1,0 +1,27 @@
+class Main
+{
+ static int m, n, count; 
+  
+public static void main(String args[])
+{
+ for(n=1; n <= 100;n++)
+  {
+    count = 0;
+
+    for(m=2;m <= n/2;m++)
+    {
+      if(n%m == 0)
+      {
+        count++;
+	break;
+      }
+      	
+    }	
+    if(count == 0 && n != 1 )
+
+	System.out.print(n +" ");
+
+  }
+
+}
+}
