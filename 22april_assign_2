@@ -1,0 +1,34 @@
+import java.util.*;
+class area
+{
+    Scanner sn=new Scanner(System.in);
+  void value()
+  {
+      	int l,b;
+      	
+      	l=sn.nextInt();
+      	b=sn.nextInt();
+      	System.out.println("Area of rectangle = "+l*b);
+  }
+  void value(int r)
+  {
+      System.out.println("Area of circle = "+(3.14*r*r));
+  }
+}
+public class Main
+{
+    
+	public static void main(String[] args)
+	{
+	    Scanner sn=new Scanner(System.in);
+    
+	  area a=new area();
+	  System.out.println("Enter length and breadth of a Rectangle");
+	  a.value();
+	  System.out.println("Enter radius of a circle");
+	  int r;
+      r=sn.nextInt();
+      
+	  a.value(r);
+	}
+}
