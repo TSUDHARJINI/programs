@@ -1,0 +1,44 @@
+import java.util.*;
+public class Main
+{
+    static void subtraction(int a[][],int b[][],int n)
+    {
+        int c[][],i,j;
+        c=new int[5][5];
+        for( i=0;i<n;i++)
+          for(j=0;j<n;j++)
+          
+         c[i][j]=a[i][j]-b[i][j];
+         System.out.println("subtraction of given matrices");
+         for(i=0;i<n;i++)
+         {
+          for(j=0;j<n;j++)
+          {
+            System.out.print("  "+c[i][j]);
+          }
+          System.out.println();
+         }
+        
+    }
+	public static void main(String[] args)
+	{
+	    int i,j,a[][],b[][];
+		System.out.println("enter size of the matrix");
+		Scanner sn=new Scanner(System.in);
+		int n=sn.nextInt();
+		a=new int[5][5];
+		b=new int[5][5];
+		System.out.println("enter the 1st matrix elements");
+		 for(i=0;i<n;i++)
+		  for(j=0;j<n;j++)
+		    a[i][j]=sn.nextInt();
+	
+	    System.out.println("enter the 2nd matrix elements");
+		 for(i=0;i<n;i++)
+		  for(j=0;j<n;j++)
+		    b[i][j]=sn.nextInt();
+		    
+		    Main m=new Main();
+		    m.subtraction(a,b,n);
+	}
+}
