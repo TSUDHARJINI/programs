@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Main
+{  
+public static void main(String[] args)
+{  
+  
+        int  arr[];
+        arr=new int[100];
+        System.out.println("Enter the size of an array: ");  
+        Scanner sn=new Scanner (System.in);
+        int n=sn.nextInt();
+        System.out.println("Enter the elements of an array: ");  
+        for(int i=0;i<n;i++)
+           arr[i]=sn.nextInt();
+        System.out.println("Duplicate elements in given array: ");  
+        
+        for(int i = 0; i < n; i++)
+        {  
+            for(int j = i + 1; j < n; j++) 
+            {  
+                if(arr[i] == arr[j])  
+                    System.out.println(arr[j]);  
+            }  
+        }  
+    }  
+}  
