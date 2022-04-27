@@ -1,0 +1,47 @@
+import java.util.*;
+class Area
+{
+void findarea(int a, int b)
+    {
+       System.out.println( " Area of rectangle  is : " + a*b);
+    }
+  
+void findarea(float r)
+       {
+         System.out.println( " Area of circle is :" +( 3.14 * r*r));
+       }
+  
+void findarea(int side)
+       {
+         System.out.println( " Area of circle is :" +(side*side));
+       }
+
+ void findarea(int b, float h)
+    {
+        System.out.println( " Area of triangle  is : "+ (0.5*b*h));
+ }
+}
+
+class Main
+{
+public static void main(String args[])
+ {
+      int l,b,s,base;
+      float r,height;
+      Scanner sn=new Scanner(System.in);
+     Area a = new Area();
+     System.out.println("Enter length and breadth of a rectangle");
+     l=sn.nextInt();
+     b=sn.nextInt();
+      a.findarea(l,b);
+     System.out.println("Enter radius of the circle");
+     r=sn.nextInt();
+     a.findarea(r);
+     System.out.println("Enter side of the square");
+     s=sn.nextInt();
+     a.findarea(s);
+     System.out.println("Enter base and heigth of the triangle");
+     base=sn.nextInt();
+     height=sn.nextInt();
+     a.findarea(base,height);
+      }}
