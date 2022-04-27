@@ -1,0 +1,44 @@
+import java.awt.*;
+class Mypadd extends Frame
+{
+    MenuBar mb;
+    Menu file,edit,view;
+    MenuItem fa,fb,fc,fd,ea,eb,ec,ed,za,zb,zc;
+    Mypadd()
+    {
+        setTitle("Notepad");
+        mb=new MenuBar();
+        file=new Menu("File");
+        edit=new Menu("Edit");
+        view=new Menu("View");
+        setMenuBar(mb);
+        mb.add(file);
+        mb.add(edit);
+        mb.add(view)
+        fa=new MenuItem("New");
+        fb=new MenuItem("Open");
+        fc=new MenuItem("Save");
+        fd=new MenuItem("Print");
+        file.add(fa);file.add(fb);file.add(fc);file.add(fd);
+        ea=new MenuItem("Cut");
+        eb=new MenuItem("Copy");
+        eb=new MenuItem("Paste");
+        eb=new MenuItem("Select All");
+        edit.add(ea);edit.add(eb);edit.add(ec);edit.add(ed);
+        za=new MenuItem("Zoom");
+        zb=new MenuItem("Status Bar");
+        zc=new MenuItem("Wordwrap");
+        view.add(za);view.add(zb);view.add(zc);
+        pack();
+    }
+}
+class Main
+{
+    public static void main(String args[])
+    {
+        Mypadd m=new Mypadd();
+        m.setSize(800,600);
+        m.show();
+    }
+
+}
