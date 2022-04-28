@@ -1,0 +1,23 @@
+import java.util.*;
+class Main
+{
+public static void main (String[] args)
+{
+    
+    
+       Scanner sn= new Scanner(System.in);
+       String s1,s2;
+       System.out.println("enter first string");
+       s1=sn.nextLine();
+       System.out.println("Which character u want to replace");
+       String ch1=sn.next();
+       System.out.println("With which char u want to replace ");
+       String ch2=sn.next();
+         s2=s1.replace(ch1,ch2);
+        String  st[]=s1.split("\\s");
+       int n=st.length;
+       
+    System.out.println(n);
+    System.out.println(s2);
+    }
+}
